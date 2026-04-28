@@ -1,9 +1,16 @@
-import { Menu, MoveRight } from "lucide-react";
+import { CircleCheckBig, Menu, MoveRight } from "lucide-react";
 import LogoIcon from "./components/LogoIcon"
 import LogoName from "./components/LogoName"
 import { useIsDesktop } from "./hooks/useIsDesktop";
 import { useState } from "react";
 import Background from "./components/ParallaxBg";
+import dashboardDesktop from "./assets/dashboard-desktop.png";
+import dashboardMobile from "./assets/dashboard-mobile.png";
+import WindowFrame from "./components/WindowFrame";
+import InfoCard from "./components/InfoCard";
+import doc from "./assets/doc.png";
+import box from "./assets/box.png";
+import finance from "./assets/finance.png";
 
 function App() {
 
@@ -21,8 +28,8 @@ function App() {
       />
       <div
         className="w-full min-h-screen flex flex-col items-center">
-        <div className="p-4 bg-white w-full justify-between flex flex-row border-b border-gray-200 h-16 fixed top-0 left-0 z-10">
-          <div className="flex items-center gap-2">
+        <div className="md:p-4 bg-white w-full justify-between flex flex-row border-b border-gray-200 h-16 fixed top-0 left-0 z-10">
+          <div className="flex items-center gap-2 ml-4 md:ml-0">
             <LogoIcon size={isDesktop ? 38 : 28}></LogoIcon>
             <LogoName size={isDesktop ? 200 : 130} color="black" />
           </div>
@@ -35,16 +42,11 @@ function App() {
             </div>
           )}
           {!isDesktop && (
-            <div className="flex flex-row gap-4 items-center">
+            <div className="flex flex-row gap-4 items-center mr-4 md:mr-0">
                <Menu onClick={toggleMenu}></Menu>
             </div>
           )}
-        </div>
-        <div className="absolute left-1/2 -translate-x-1/2 w-[80%] h-[70px]
-          bg-[radial-gradient(circle_at_center,_rgba(52,199,162,0.45)_0%,_rgba(52,199,162,0.15)_40%,_transparent_70%)]
-          blur-2xl opacity-80 pointer-events-none"
-        />
-        {!isDesktop && (
+          {!isDesktop && (
           <div
             className={`
               absolute top-16 w-full bg-white p-4 flex flex-col border border-gray-200 items-center gap-4
@@ -58,6 +60,11 @@ function App() {
             <button className="btn btn-primary w-[200px]">Nous contacter</button>
           </div>)
         }
+        </div>
+        <div className="absolute left-1/2 -translate-x-1/2 w-[80%] h-[70px]
+          bg-[radial-gradient(circle_at_center,_rgba(52,199,162,0.45)_0%,_rgba(52,199,162,0.15)_40%,_transparent_70%)]
+          blur-2xl opacity-80 pointer-events-none"
+        />
         <div className="absolute top-16 flex flex-col items-center">
           <div className="mt-20 bg-primary-soft rounded-full py-2 px-4 flex flex-row items-center gap-3 border border-primary">
             <div className="w-2 h-2 bg-primary rounded-full animate-pulse-scale" />
@@ -75,6 +82,47 @@ function App() {
               <MoveRight className="transition-transform duration-300 ease-out group-hover:translate-x-1" />
             </button>
             <button className="btn btn-secondary px-6 py-3 w-[250px] transition-all duration-300 ease-out hover:scale-[1.02] hover:shadow-md group">Demandez une démo</button>
+          </div>
+          {isDesktop ? (
+            <WindowFrame className="mt-20" title="Aperçu de Nafa Pro" src={dashboardDesktop} />
+          ) : (
+            <img className="mt-20 rounded w-[80%]" src={dashboardMobile} alt="Aperçu de Nafa Pro" />
+          )}
+
+          <div className="mt-28 flex md:flex-row flex-col items-center gap-20">
+            <div className="md:w-[500px] w-[80%] flex flex-col gap-6">
+              <InfoCard
+                title="Gestion manuelle épuisante"
+                description="Cahiers, Excel, feuilles volantes — des heures perdues chaque semaine à saisir des données qui se perdent."
+                icon={doc}
+              />
+              <InfoCard
+                title="Stocks incontrôlables"
+                color="#E9D4BC"
+                description="Ruptures de stock non anticipées, sur-stockage coûteux, pertes dues à l'expiration sans visibilité en temps réel."
+                icon={box}
+              />
+              <InfoCard
+                title="Finance dans le flou"
+                color="#ff7575"
+                description="Pas de vision claire des revenus, des marges ou des dépenses. Décisions prises à l'aveugle chaque mois."
+                icon={finance}
+              />
+            </div>
+            <div className="md:w-[500px] w-[80%] flex flex-col gap-8">
+              <div className="flex flex-row gap-4 items-center justify-">
+                <div className="w-[35px] h-[2px] bg-primary"></div>
+                <p className="text-sm font-semibold text-primary">POURQUOI NAFA ?</p>
+              </div>
+              <h2 className="text-4xl">Les commerçants méritent <br/><span className="text-primary">mieux</span> que ça.</h2>
+              <p className="text-gray-400 text-start w-[300px] md:w-[450px]">
+                Nous avons conçu Nafa pour les gérants de boutiques, restaurants et supermarchés qui veulent piloter leur business avec la même rigueur qu'une grande entreprise — sans la complexité.
+              </p>
+              <div className="bg-primary-soft rounded-md py-4 px-4 flex flex-row items-center gap-3 border border-primary w-[fit-content]">
+                <CircleCheckBig className="text-primary" />
+                <p className="text-primary font-semibold">Une plateforme. Tous sous contrôle.</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
