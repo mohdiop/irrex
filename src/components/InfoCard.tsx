@@ -4,12 +4,9 @@ import React from "react";
 type InfoCardProps = {
   title: string;
   description: string;
-
   icon?: string;
   alt?: string;
-
   lucideIcon?: LucideIcon;
-
   color?: string;
   className?: string;
 };
@@ -26,17 +23,18 @@ const InfoCard: React.FC<InfoCardProps> = ({
   return (
     <div
       className={`
-        flex items-start gap-4 p-6 rounded-2xl border shadow-sm
+        relative flex items-start gap-4 p-6 rounded-2xl
+        border backdrop-blur-sm
         ${className}
       `}
       style={{
-        borderColor: color,
-        backgroundColor: `${color}10`,
+        borderColor: `${color}40`, // bordure douce
+        backgroundColor: `${color}1A`, // couleur + transparence (~10%)
       }}
     >
-      <div
-        className="flex-shrink-0 w-14 h-14 rounded-sm bg-white flex items-center justify-center shadow-sm border border-gray-300"
-      >
+
+      {/* contenu */}
+      <div className="relative flex-shrink-0 w-14 h-14 rounded-sm bg-white/80 backdrop-blur-sm flex items-center justify-center shadow-sm border border-gray-200">
         {icon ? (
           <img
             src={icon}
@@ -52,7 +50,7 @@ const InfoCard: React.FC<InfoCardProps> = ({
         ) : null}
       </div>
 
-      <div>
+      <div className="relative">
         <h3 className="text-md text-gray-900">
           {title}
         </h3>

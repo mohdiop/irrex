@@ -11,6 +11,8 @@ import InfoCard from "./components/InfoCard";
 import doc from "./assets/doc.png";
 import box from "./assets/box.png";
 import finance from "./assets/finance.png";
+import ProductCard from "./components/ProductCard";
+import nafaLogo from "./assets/nafa-logo.png";
 
 function App() {
 
@@ -65,7 +67,7 @@ function App() {
           bg-[radial-gradient(circle_at_center,_rgba(52,199,162,0.45)_0%,_rgba(52,199,162,0.15)_40%,_transparent_70%)]
           blur-2xl opacity-80 pointer-events-none"
         />
-        <div className="absolute top-16 flex flex-col items-center">
+        <div className="absolute top-16 flex flex-col items-center overflow-x-hidden overscroll-x-none">
           <div className="mt-20 bg-primary-soft rounded-full py-2 px-4 flex flex-row items-center gap-3 border border-primary">
             <div className="w-2 h-2 bg-primary rounded-full animate-pulse-scale" />
             <p className="text-primary font-semibold">Nafa Pro est maintenant disponible</p>
@@ -110,11 +112,11 @@ function App() {
               />
             </div>
             <div className="md:w-[500px] w-[80%] flex flex-col gap-8">
-              <div className="flex flex-row gap-4 items-center justify-">
+              <div className="flex flex-row gap-4 items-center justify-start">
                 <div className="w-[35px] h-[2px] bg-primary"></div>
                 <p className="text-sm font-semibold text-primary">POURQUOI NAFA ?</p>
               </div>
-              <h2 className="text-4xl">Les commerçants méritent <br/><span className="text-primary">mieux</span> que ça.</h2>
+              <h2 className="text-2xl md:text-4xl text-start md:text-start w-[330px] md:w-[450px]">Les commerçants méritent <br/><span className="text-primary">mieux</span> que ça.</h2>
               <p className="text-gray-400 text-start w-[300px] md:w-[450px]">
                 Nous avons conçu Nafa pour les gérants de boutiques, restaurants et supermarchés qui veulent piloter leur business avec la même rigueur qu'une grande entreprise — sans la complexité.
               </p>
@@ -122,6 +124,38 @@ function App() {
                 <CircleCheckBig className="text-primary" />
                 <p className="text-primary font-semibold">Une plateforme. Tous sous contrôle.</p>
               </div>
+            </div>
+          </div>
+
+          <div className="mt-20 flex flex-col items-center gap-8">
+            <div className="flex flex-row gap-4 items-center justify-center">
+              <div className="w-[50px] h-[2px] bg-primary"></div>
+              <p className="text-sm font-semibold text-primary">PRODUITS</p>
+              <div className="w-[50px] h-[2px] bg-primary"></div>
+            </div>
+            <h1 className="text-2xl md:text-4xl text-center w-[330px] md:w-full">Trois outils. <span className="text-primary">Un seul écosystème.</span></h1>
+            <p className="text-gray-400 text-center w-[330px] md:w-[450px]">
+              Nafa se décline en trois modules pensés pour couvrir l'ensemble de vos besoins métier.
+            </p>
+            <div className="flex flex-col md:flex-row gap-10 px-10">
+              <ProductCard
+                name="Nafa Client"
+                description="Le module réservé aux clients. Gérez votre base clients et suivez l'historique d'achats de chacun de vos clients."
+                isAvailable={false}
+                logoSrc={nafaLogo}
+              />
+              <ProductCard
+                name="Nafa Pro"
+                description="La solution complète pour gérer vos stocks, enregistrer vos ventes, et suivre vos finances en temps réel. Conçu pour les commerçants actifs."
+                isAvailable={true}
+                logoSrc={nafaLogo}
+              />
+              <ProductCard
+                name="Nafa Stock"
+                description="Un module avancé de gestion d'entrepôt multi-dépôt, avec alertes automatiques et suivi des mouvements de marchandises."
+                isAvailable={false}
+                logoSrc={nafaLogo}
+              />
             </div>
           </div>
         </div>
