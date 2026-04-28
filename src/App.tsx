@@ -1,4 +1,4 @@
-import { CircleCheckBig, Menu, MoveRight } from "lucide-react";
+import { CircleCheckBig, LayoutDashboard, Menu, MonitorSmartphone, MoveRight, Package, Shield, ShoppingCart } from "lucide-react";
 import LogoIcon from "./components/LogoIcon"
 import LogoName from "./components/LogoName"
 import { useIsDesktop } from "./hooks/useIsDesktop";
@@ -13,6 +13,10 @@ import box from "./assets/box.png";
 import finance from "./assets/finance.png";
 import ProductCard from "./components/ProductCard";
 import nafaLogo from "./assets/nafa-logo.png";
+import dashboard from "./assets/dashboard.png";
+import products from "./assets/products.png";
+import sales from "./assets/sales.png";
+import { CallToActionCard } from "./components/CallToActionCard";
 
 function App() {
 
@@ -67,7 +71,7 @@ function App() {
           bg-[radial-gradient(circle_at_center,_rgba(52,199,162,0.45)_0%,_rgba(52,199,162,0.15)_40%,_transparent_70%)]
           blur-2xl opacity-80 pointer-events-none"
         />
-        <div className="absolute top-16 flex flex-col items-center overflow-x-hidden overscroll-x-none">
+        <div className="absolute top-16 flex flex-col items-center overflow-x-hidden overscroll-x-none overflow-y-hidden">
           <div className="mt-20 bg-primary-soft rounded-full py-2 px-4 flex flex-row items-center gap-3 border border-primary">
             <div className="w-2 h-2 bg-primary rounded-full animate-pulse-scale" />
             <p className="text-primary font-semibold">Nafa Pro est maintenant disponible</p>
@@ -155,6 +159,62 @@ function App() {
                 description="Un module avancé de gestion d'entrepôt multi-dépôt, avec alertes automatiques et suivi des mouvements de marchandises."
                 isAvailable={false}
                 logoSrc={nafaLogo}
+              />
+            </div>
+          </div>
+
+          <div className="w-full flex flex-col px-10 mt-20 gap-10">
+            <div className="flex flex-row gap-4 items-center justify-start">
+              <div className="w-[35px] h-[2px] bg-primary"></div>
+              <p className="text-sm font-semibold text-primary">NAFA PRO</p>
+            </div>
+            <h2 className="text-2xl md:text-4xl text-start md:text-start w-[330px] md:w-[800px]">Tout ce dont votre commerce a <br/><span className="text-primary">besoin</span> aujourd'hui.</h2>
+            <div className="flex items-center justify-between gap-10 md:gap-20 flex-col-reverse md:flex-row">
+              <div className="w-[330px] md:w-[500px] flex flex-col gap-8">
+                <InfoCard
+                  title="Gestion des stocks en temps réel"
+                  description="Ajoutez, modifiez et suivez vos articles avec des alertes automatiques de réapprovisionnement."
+                  lucideIcon={Package}
+                />
+                <InfoCard
+                  title="Enregistrement des ventes"
+                  description="Interface rapide de caisse, historique complet de toutes vos transactions."
+                  lucideIcon={ShoppingCart}
+                />
+              </div>
+              <div className="flex flex-col items-center justify-center">
+                <img src={dashboard} alt="Aperçu du tableau de bord" className="w-[500px]" />
+              </div>
+            </div>
+
+            <div className="flex flex-col-reverse items-center justify-between gap-10 md:gap-20 md:flex-row-reverse">
+              <div className="w-[330px] md:w-[500px] flex flex-col gap-8">
+                <InfoCard
+                  title="Tableau de bord financier"
+                  description="Revenus, marges, dépenses et bénéfices nets visualisés en un coup d'œil."
+                  lucideIcon={LayoutDashboard}
+                />
+                <InfoCard
+                  title="Accessible partout"
+                  description="Application web responsive, disponible sur ordinateur, tablette et mobile. Vos données, où que vous soyez."
+                  lucideIcon={MonitorSmartphone}
+                />
+                <InfoCard
+                  title="Sécurité & Sauvegardes"
+                  description="Données chiffrées, sauvegardes automatiques quotidiennes, aucune perte d'information."
+                  lucideIcon={Shield}
+                />
+              </div>
+              <div className="flex flex-row items-center justify-between md:w-[500px] w-[330px] gap-4">
+                <img src={products} alt="Aperçu du tableau de bord" className="md:w-[220px] w-[150px]" />
+                <img src={sales} alt="Aperçu du tableau de bord" className="md:w-[220px] w-[150px]" />
+              </div>
+            </div>
+            <div className="mt-10">
+              <CallToActionCard
+                title="Prêt à essayer Nafa Pro?"
+                description="Contactez-nous pour une démonstration gratuite et découvrez comment Nafa peut transformer votre commerce."
+                buttonLabel="Demander une démo"
               />
             </div>
           </div>

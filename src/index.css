@@ -65,6 +65,12 @@
     @apply border border-border text-text hover:border-primary hover:text-primary;
   }
 
+  .btn-white {
+    @apply bg-white text-primary border border-white shadow-sm
+          hover:bg-gray-50 hover:shadow-md
+          focus:outline-none focus:ring-2 focus:ring-white/60;
+  }
+
   .card {
     @apply bg-card border border-border rounded-lg p-4 shadow-sm transition;
   }

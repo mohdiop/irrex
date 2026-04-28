@@ -44,8 +44,7 @@ const InfoCard: React.FC<InfoCardProps> = ({
           />
         ) : LucideIconComponent ? (
           <LucideIconComponent
-            className="w-7 h-7"
-            style={{ color }}
+            className="w-7 h-7 text-gray-500"
           />
         ) : null}
       </div>
