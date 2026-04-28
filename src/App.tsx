@@ -3,7 +3,7 @@ import LogoIcon from "./components/LogoIcon"
 import LogoName from "./components/LogoName"
 import { useIsDesktop } from "./hooks/useIsDesktop";
 import { useState } from "react";
-import Background from "./components/ParallaxBg";
+import Background from "./components/Background";
 import dashboardDesktop from "./assets/dashboard-desktop.png";
 import dashboardMobile from "./assets/dashboard-mobile.png";
 import WindowFrame from "./components/WindowFrame";
@@ -46,7 +46,6 @@ function App() {
       <Background isDesktop={isDesktop} />
       <div className="w-full min-h-screen flex flex-col items-center">
 
-        {/* ── NAVBAR ── */}
         <div className="md:p-4 bg-white w-full justify-between flex flex-row border-b border-gray-200 h-16 fixed top-0 left-0 z-10">
           <div className="flex items-center gap-2 ml-4 md:ml-0">
             <LogoIcon size={isDesktop ? 38 : 28}></LogoIcon>
@@ -87,9 +86,6 @@ function App() {
         />
 
         <div className="mt-16 flex flex-col items-center overflow-x-hidden overscroll-x-none overflow-y-hidden">
-
-          {/* ── HERO ─────────────────────────────────────────────────────────── */}
-          {/* Chaque élément hero utilise --hero-i pour le stagger CSS */}
 
           <div
             className="mt-20 bg-primary-soft rounded-full py-2 px-4 flex flex-row items-center gap-3 border border-primary hero-item"
@@ -143,7 +139,6 @@ function App() {
             )}
           </div>
 
-          {/* ── POURQUOI NAFA ── */}
           <div className="mt-28 flex md:flex-row flex-col items-center gap-20">
             <StaggerReveal
               className="md:w-[500px] w-[80%] flex flex-col gap-6"
@@ -187,7 +182,6 @@ function App() {
             </Reveal>
           </div>
 
-          {/* ── PRODUITS ── */}
           <div id="produits" className="mt-20 flex flex-col items-center gap-8 scroll-mt-20">
             <Reveal className="flex flex-col items-center gap-8 w-full">
               <div className="flex flex-row gap-4 items-center justify-center">
@@ -231,7 +225,6 @@ function App() {
             </StaggerReveal>
           </div>
 
-          {/* ── NAFA PRO ── */}
           <div id="nafa-pro" className="w-full flex flex-col px-10 mt-20 gap-10 scroll-mt-20">
             <Reveal>
               <div className="flex flex-row gap-4 items-center justify-start">
@@ -303,7 +296,6 @@ function App() {
             </Reveal>
           </div>
 
-          {/* ── À PROPOS ── */}
           <div id="a-propos" className="w-full mt-20 px-10 flex flex-col gap-10 scroll-mt-20">
             <Reveal>
               <div className="flex flex-row gap-4 items-center justify-start">
@@ -354,7 +346,6 @@ function App() {
             </div>
           </div>
 
-          {/* ── CONTACT ── */}
           <div id="contact" className="w-full mt-20 px-10 flex flex-col gap-10 scroll-mt-20">
             <Reveal>
               <div className="flex flex-row gap-4 items-center justify-start">
@@ -398,7 +389,6 @@ function App() {
           </div>
         </div>
 
-        {/* ── FOOTER ── */}
         <div className="mt-20 border-t border-gray-300 w-full bg-white p-6 flex flex-col items-start gap-5">
           <div className="flex flex-col md:flex-row items-start justify-between w-full gap-10 md:gap-0">
             <div className="flex flex-col gap-2">

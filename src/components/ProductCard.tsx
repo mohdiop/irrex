@@ -34,7 +34,6 @@ const ProductCard: React.FC<ProductCardProps> = ({
             />
         )}
       <div className="p-6">
-        {/* Badge */}
         <div
             className={`inline-flex items-center gap-2 px-4 py-1 rounded-full text-sm mb-6
             ${
@@ -51,7 +50,6 @@ const ProductCard: React.FC<ProductCardProps> = ({
             {isAvailable ? "Disponible maintenant" : "Bientôt disponible"}
         </div>
 
-        {/* Logo */}
         <div className="w-14 h-14 p-2 rounded-lg bg-white flex items-center justify-center mb-4 shadow-sm overflow-hidden border border-gray-200">
             {logoSrc ? (
             <img
@@ -64,13 +62,10 @@ const ProductCard: React.FC<ProductCardProps> = ({
             )}
         </div>
 
-        {/* Title */}
         <h3 className="text-xl font-semibold mb-2">{name}</h3>
 
-        {/* Description */}
         <p className="text-gray-500 mb-6">{description}</p>
 
-        {/* Action */}
         {isAvailable ? (
             <button
                 onClick={onExplore}

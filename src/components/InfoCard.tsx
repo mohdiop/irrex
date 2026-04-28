@@ -55,7 +55,6 @@ const InfoCard: React.FC<InfoCardProps> = ({
         backgroundColor,
       }}
     >
-      {/* Icon */}
       {hasIcon && (
         <div
           className={`
@@ -74,13 +73,12 @@ const InfoCard: React.FC<InfoCardProps> = ({
           ) : IconComponent ? (
             <IconComponent
               className="w-6 h-6"
-              style={{ color }} // 🔥 prend la couleur de la card
+              style={{ color }}
             />
           ) : null}
         </div>
       )}
 
-      {/* Content */}
       <div className={hasDescription ? "" : "flex items-center"}>
         {hasDescription ? (
           <>
