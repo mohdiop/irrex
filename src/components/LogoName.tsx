@@ -8,17 +8,15 @@ export interface LogoNameProps extends React.SVGProps<SVGSVGElement> {
 const LogoName: React.FC<LogoNameProps> = ({
   size,
   width = 998,
-  height = 120,
   color = "currentColor",
   ...props
 }) => {
   const finalWidth = size ?? width;
-  const finalHeight = size ?? height;
 
   return (
     <svg
       width={finalWidth}
-      height={finalHeight}
+      height="auto"
       viewBox="0 0 998 120"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
