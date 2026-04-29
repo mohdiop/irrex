@@ -367,7 +367,7 @@ function App() {
                     iconComponent={Mail}
                   />
                 </a>
-                <a href="https://wa.me/22370313104" target="_blank" rel="noopener noreferrer">
+                <a href="https://wa.me/971564664211" target="_blank" rel="noopener noreferrer">
                   <InfoCard
                     title="Irrex Consulting sur WhatsApp"
                     color="#2D2D2D"
@@ -422,7 +422,7 @@ function App() {
               <a href="mailto:contact@irrexconsulting.com">
                 <MiniContactCard icon={Mail}></MiniContactCard>
               </a>
-              <a href="https://wa.me/22370313104" target="_blank" rel="noopener noreferrer">
+              <a href="https://wa.me/971564664211" target="_blank" rel="noopener noreferrer">
                 <MiniContactCard icon={RiWhatsappLine}></MiniContactCard>
               </a>
               <a href="https://www.linkedin.com/company/irrex-consulting" target="_blank" rel="noopener noreferrer">
